@@ -1,0 +1,248 @@
+/* ======================================================
+   Base
+====================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+/* ======================================================
+   Layout
+====================================================== */
+
+.page {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  width: fit-content;
+  margin: 0 0 12px;
+  padding: 6px 12px;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.08);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.05;
+}
+
+h2 {
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.subtitle {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: #cbd5e1;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card,
+.result-card {
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  background: #111827;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+}
+
+.card {
+  padding: 22px;
+  margin-bottom: 22px;
+}
+
+.section-header p,
+.result-header p {
+  margin-bottom: 0;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.result-card {
+  padding: 20px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+
+/* ======================================================
+   Textareas
+====================================================== */
+
+.input-textarea,
+.result-textarea {
+  width: 100%;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  outline: none;
+  background: #020617;
+  color: #f8fafc;
+  line-height: 1.55;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-textarea {
+  min-height: 220px;
+  margin-top: 18px;
+  padding: 16px;
+}
+
+.result-textarea {
+  min-height: 260px;
+  padding: 14px;
+}
+
+.input-textarea:focus,
+.result-textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.16);
+}
+
+.input-textarea::placeholder {
+  color: #64748b;
+}
+
+
+/* ======================================================
+   Buttons
+====================================================== */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.primary-button,
+.secondary-button,
+.copy-button {
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.primary-button {
+  padding: 12px 18px;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.secondary-button {
+  padding: 12px 18px;
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+.copy-button {
+  padding: 9px 12px;
+  background: #1e293b;
+  color: #bfdbfe;
+  white-space: nowrap;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.copy-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
+
+/* ======================================================
+   Feedback
+====================================================== */
+
+.status {
+  min-height: 22px;
+  margin: 14px 0 0;
+  color: #93c5fd;
+  font-size: 14px;
+}
+
+.status.error {
+  color: #fca5a5;
+}
+
+.status.success {
+  color: #86efac;
+}
+
+
+/* ======================================================
+   Responsive
+====================================================== */
+
+@media (max-width: 860px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-header {
+    flex-direction: column;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analisador de Chamado</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <p class="tag">CRM e SLA</p>
+        <h1>Analisador de Chamado</h1>
+        <p class="subtitle">
+          Cole a informacao enviada pelo analista e gere uma atualizacao formal para CRM e uma justificativa resumida para SLA.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-header">
+        <div>
+          <h2>Informacao do chamado</h2>
+          <p>Use o texto bruto informado pelo analista ou registrado no chamado.</p>
+        </div>
+      </div>
+
+      <textarea
+        id="textoChamado"
+        class="input-textarea"
+        placeholder="Exemplo: Validado logs do banco, identificado bloqueio em sessoes ativas. Cliente foi orientado a acionar equipe de aplicacao antes de reiniciar os servicos."
+      ></textarea>
+
+      <div class="actions">
+        <button id="btnAnalisar" class="primary-button">Analisar chamado</button>
+        <button id="btnLimpar" class="secondary-button">Limpar</button>
+      </div>
+
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="results-grid">
+      <article class="result-card">
+        <div class="result-header">
+          <div>
+            <h2>Atualizacao para CRM</h2>
+            <p>Texto mais completo, entre 3 e 10 linhas.</p>
+          </div>
+          <button class="copy-button" data-target="resultadoCrm">Copiar</button>
+        </div>
+
+        <textarea id="resultadoCrm" class="result-textarea" readonly></textarea>
+      </article>
+
+      <article class="result-card">
+        <div class="result-header">
+          <div>
+            <h2>Justificativa para SLA</h2>
+            <p>Texto resumido, ate 4 linhas.</p>
+          </div>
+          <button class="copy-button" data-target="resultadoSla">Copiar</button>
+        </div>
+
+        <textarea id="resultadoSla" class="result-textarea" readonly></textarea>
+      </article>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
